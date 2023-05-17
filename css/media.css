@@ -1,0 +1,183 @@
+/* === DESKTOP FIRST === */
+
+/* xl <= Extra extra large (xxl) */
+@media (max-width: 1400px) {
+	[class*="__container"] {
+	}
+}
+
+/* lg <= Extra large (xl) */
+@media (max-width: 1200px) {
+	[class*="__container"] {
+	}
+}
+
+/* md <= Large (--md2) */
+@media (max-width: 991.98px) {
+	[class*="__container"] {
+	}
+	.button-header {
+		font-size: 16px;
+		/* padding: 14px 26px; */
+		width: 120px;
+	}
+}
+
+/* sm <= Medium (--md3) */
+@media (max-width: 767.98px) {
+	[class*="__container"] {
+	}
+	.button-header {
+		font-size: 16px;
+		padding: 10px 24px;
+		height: 45px;
+		margin: 0px 60px 0px 0px;
+	}
+	.icon-menu {
+		display: block;
+		display: block;
+		position: absolute;
+		top: 40px;
+		right: 0;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		transform: rotate(180deg);
+	}
+	.icon-menu span {
+		transition: all 0.3s ease 0s;
+		top: calc(50% - 1px);
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+	}
+	.icon-menu span:first-child {
+		top: 0px;
+		width: 40%;
+	}
+	.icon-menu span:nth-child(2) {
+		width: 70%;
+	}
+	.icon-menu span:last-child {
+		top: auto;
+		bottom: 0px;
+	}
+	.icon-menu._active span:first-child {
+		width: 100%;
+	}
+	.icon-menu._active span:nth-child(2) {
+		width: 70%;
+	}
+	.icon-menu._active span:last-child {
+		width: 40%;
+	}
+	.header__body {
+		padding: 20px 0;
+	}
+	.menu__body {
+		position: fixed;
+		overflow: auto;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		padding: 110px 15px 30px 15px;
+		transition: left 0.3s ease 0s;
+		z-index: 1;
+	}
+	.menu__body._active {
+		left: 0;
+	}
+	.menu__list {
+		display: flex;
+		flex-direction: column;
+	}
+	.menu__item {
+		font-size: 24px;
+		padding: 5px;
+	}
+	.menu__item:not(:last-child) {
+		margin: 0px 0px 10px 0px;
+	}
+	.header__body::before {
+		content: "";
+		background: #000;
+		width: 100%;
+		left: 0;
+		height: 98px;
+		position: absolute;
+		z-index: 2;
+	}
+}
+
+/* xs <= Small (--md4) */
+@media (max-width: 479.98px) {
+	[class*="__container"] {
+	}
+}
+@media (max-width: 400px) {
+	[class*="__container"] {
+	}
+	.button-header {
+		width: 80px;
+		font-size: 16px;
+		padding: 8px 20px;
+		height: 40px;
+	}
+}
+
+/* === MOBILE FIRST === */
+
+/* Custom (xs) */
+@media (min-width: 0) {
+	[class*="__container"] {
+	}
+}
+
+/* Small (sm) */
+@media (min-width: 576px) {
+	[class*="__container"] {
+	}
+}
+
+/* Medium (--md3) */
+@media (min-width: 768px) {
+	[class*="__container"] {
+	}
+}
+
+/* Large (--md2) */
+@media (min-width: 992px) {
+	[class*="__container"] {
+	}
+}
+
+/* Extra large (xl) */
+@media (min-width: 1200px) {
+	[class*="__container"] {
+	}
+}
+
+/* Extra extra large (xxl) */
+@media (min-width: 1400px) {
+	[class*="__container"] {
+	}
+}
+
+/* === SPECIAL === */
+
+/* For mouse devices */
+@media (any-hover: hover) {
+	.menu__link:hover {
+		color: var(--color1);
+	}
+	.btn_black:hover {
+		color: var(--color1);
+		border: 1px solid var(--color1);
+		box-shadow: 0 0 5px var(--color1);
+	}
+}
