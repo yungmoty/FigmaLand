@@ -369,3 +369,59 @@ body._lock {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0e0e0e 66.15%);
 	margin-bottom: 100px;
 }
+
+/* ===== Sectin#3 ===== */
+
+.features {
+	margin-top: 100px;
+}
+.features__container {
+}
+.features__header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 80px;
+}
+.features__title {
+	margin-bottom: 27px;
+}
+.main-title {
+	font-size: 52px;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+.features__text {
+	padding-right: 210px;
+	padding-left: 210px;
+	font-size: 20px;
+}
+.features__body {
+}
+.features__image {
+}
+.features__content {
+	margin-top: 60px;
+}
+.row {
+}
+.row:not(:last-child) {
+	margin-bottom: 70px;
+}
+.row__title {
+	display: flex;
+	gap: 20px;
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: inherit;
+	transition: color 0.3s ease 0s;
+}
+.row__title span {
+	color: #02e4c0;
+	font-size: 25px;
+}
+
+.row__text {
+}
