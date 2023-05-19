@@ -10,11 +10,13 @@
 	<link rel="icon" href="images/favicon.png">
 	<meta property="og:image" content="images/preview.jpg">
 
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/fonticons.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
 
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
 	<script src="js/common.js" defer></script>
 	<title>Figma Land</title>
 </head>
@@ -162,27 +164,28 @@
 							It's only a keystroke away.
 						</div>
 					</div>
-					<div class="gallery__body">
-						<div class="gallery__row">
-							<a href="" class="gallery__image _ibg">
+					<div class="gallery__body swiper">
+						<div class="gallery__row swiper-wrapper">
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/01.jpg" alt="Image-1">
 							</a>
-							<a href="" class="gallery__image _ibg">
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/02.jpg" alt="Image-2">
 							</a>
-							<a href="" class="gallery__image _ibg">
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/03.jpg" alt="Image-3">
 							</a>
-							<a href="" class="gallery__image _ibg">
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/04.jpg" alt="Image-4">
 							</a>
-							<a href="" class="gallery__image _ibg">
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/05.jpg" alt="Image-5">
 							</a>
-							<a href="" class="gallery__image _ibg">
+
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/06.jpg" alt="Image-6">
 							</a>
-							<a href="" class="gallery__image _ibg">
+							<a href="" class="gallery__image _ibg swiper-slide">
 								<img src="images/gallery/07.jpg" alt="Image-7">
 							</a>
 						</div>
@@ -196,6 +199,9 @@
 							<a data-id="3" href="" class="gallery__image _ibg">
 								<img src="images/gallery/07.jpg" alt="Image-7">
 							</a> -->
+					</div>
+					<div class="slider__controls controls">
+						<div class="controls__dotts"></div>
 					</div>
 					<div class="gallery__button">
 						<a href="" class="button btn btn_black">See more</a>

@@ -62,3 +62,25 @@ if (isMobile.any()) {
 	})
 }
 //\\accordion//\\
+
+	//\\swiper-main\\//
+	if (document.querySelector('.gallery__body') && isMobile.any() && window.innerWidth < 768) {
+		new Swiper('.gallery__body', {
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 32,
+			watchOverflow: true,
+			speed: 800,
+			loop: true,
+			loopAdditionalSlides: 5,
+			preloadImages: false,
+			parallax: true,
+			// Dotts
+			pagination: {
+				el: '.controls__dotts',
+				clickable: true
+			}			
+		})
+	};
+	//\\swiper-main//\\

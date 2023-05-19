@@ -530,8 +530,11 @@ body._lock {
 .gallery__row-2 {
 	margin: 0 -20px;
 }
+.slider-slide {
+	position: relative;
+}
 .gallery__image {
-	padding: 0px 0px calc(285 / 225 * 100%) 0px;
+	/* padding: 0px 0px calc(285 / 225 * 100%) 0px; */
 }
 .gallery__row-2 .gallery__image {
 	padding: 0px 0px calc(285 / 395 * 100%) 0px;
@@ -552,4 +555,7 @@ body._lock {
 	font-weight: 500;
 	font-size: 17px;
 	width: 160px;
+}
+.slider-slide {
+	position: relative;
 }

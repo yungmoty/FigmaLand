@@ -256,6 +256,7 @@
 	}
 	.gallery__row {
 		display: block;
+		display: flex;
 	}
 	.gallery__image._ibg img {
 		position: static;
@@ -263,8 +264,8 @@
 		height: 100%;
 	}
 	.gallery__image {
-		/* width: 225px;
-		height: 285px; */
+		width: 150px;
+		height: 285px;
 	}
 }
 
@@ -389,6 +390,12 @@
 	}
 	.gallery__image:nth-child(7) {
 		display: none;
+	}
+	.swiper {
+		display: none;
+	}
+	.swiper-slide {
+		display: block;
 	}
 }
 
