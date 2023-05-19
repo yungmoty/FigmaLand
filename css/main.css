@@ -520,14 +520,14 @@ body._lock {
 .gallery__row {
 	display: grid;
 	gap: 33px;
-	/* grid-template-columns: repeat(4, 1fr); */
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	padding: 0 5px;
 	margin-bottom: 45px;
 }
-.gallery__row {
-}
 .gallery__row-2 {
+	display: grid;
+	gap: 33px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	margin: 0 -20px;
 }
 .gallery__image {
@@ -545,11 +545,15 @@ body._lock {
 	display: flex;
 	justify-content: center;
 }
-.button {
+.button__more {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-weight: 500;
 	font-size: 17px;
 	width: 160px;
+}
+.button__more._hold {
+	opacity: 0.4;
+	cursor: default;
 }

@@ -62,3 +62,57 @@ if (isMobile.any()) {
 	})
 }
 //\\accordion//\\
+
+
+//\\More Products\\//
+const buttonMore = document.querySelector('.button__more');
+
+buttonMore.addEventListener('click', (e) => {
+	getProducts(buttonMore);
+	e.preventDefault();
+});
+//\\More Products//\\
+
+// Load More Products
+async function getProducts(button) {
+	if (!button.classList.contains('_hold')) {
+		button.classList.add('_hold');
+		const file = 'json/gallery.json';
+		let response = await fetch(file, {
+			method: 'GET'
+		});
+		if (response.ok) {
+			let result = await response.json();
+			setTimeout(() => {
+				loadProducts(result);
+				button.classList.remove('_hold');
+				button.remove();
+			}, 1000);
+			
+		} else {
+			alert('Error');
+		}
+	}
+}
+
+// JSON load
+function loadProducts(data) {
+	const galleryBody = document.querySelector('.gallery__body');
+
+	galleryBody.insertAdjacentHTML('beforeend', `<div class="gallery__row-2"></div>`);
+
+	const galleryRow = document.querySelector('.gallery__row-2');
+
+	data.gallery.forEach(item => {
+		const galleryId = item.id;
+		const galleryImage = item.image;
+		const galleryNums = item.nums;
+
+		let galleryTemplate = `
+			<a data-id="${galleryId}" href="" class="gallery__image _ibg">
+				<img src="images/gallery/${galleryImage}" alt="Image-${galleryNums}">
+			</a>			
+		`
+		galleryRow.insertAdjacentHTML('beforeend', galleryTemplate);
+	})
+}

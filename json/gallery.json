@@ -2,15 +2,18 @@
 	"gallery": [
 		{
 			"id": 1,
-			"image": "05.jpg"
+			"image": "05.jpg",
+			"nums": 5
 		},
 		{
 			"id": 2,
-			"image": "06.jpg"
+			"image": "06.jpg",
+			"nums": 6
 		},
 		{
 			"id": 3,
-			"image": "07.jpg"
+			"image": "07.jpg",
+			"nums": 7
 		}
 	]
 }
