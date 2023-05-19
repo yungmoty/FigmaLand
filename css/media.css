@@ -7,7 +7,7 @@
 }
 
 /* lg <= Extra large (xl) */
-@media (max-width: 1050px) {
+@media (max-width: 1070px) {
 	[class*="__container"] {
 	}
 	.features__image {
@@ -23,6 +23,9 @@
 	.block {
 		width: 700px;
 		height: 550px;
+	}
+	.gallery__row-2 {
+		margin: 0px;
 	}
 }
 
@@ -42,16 +45,12 @@
 	.main-title {
 		font-size: 40px;
 	}
-	.features__text {
+	.main-text {
 		padding-right: 140px;
 		padding-left: 140px;
 	}
 	.boards__body::after {
 		height: 500px;
-	}
-	.contents__text {
-		padding-right: 140px;
-		padding-left: 140px;
 	}
 }
 
@@ -214,9 +213,9 @@
 	.main-title {
 		font-size: 35px;
 	}
-	.features__text {
-		padding-right: 90px;
-		padding-left: 90px;
+	.main-text {
+		padding-right: 70px;
+		padding-left: 70px;
 	}
 	.features__header {
 		margin-bottom: 50px;
@@ -228,8 +227,6 @@
 		height: 300px;
 	}
 	.contents__text {
-		padding-right: 90px;
-		padding-left: 90px;
 		font-size: 16px;
 	}
 	.block {
@@ -248,6 +245,26 @@
 	}
 	.contents {
 		margin-top: 100px;
+	}
+	.gallery__button {
+		display: none;
+		visibility: hidden;
+	}
+	.button {
+		display: none;
+		visibility: hidden;
+	}
+	.gallery__row {
+		display: block;
+	}
+	.gallery__image._ibg img {
+		position: static;
+		width: 100%;
+		height: 100%;
+	}
+	.gallery__image {
+		/* width: 225px;
+		height: 285px; */
 	}
 }
 
@@ -279,18 +296,12 @@
 		width: 300px;
 		height: 280px;
 	}
-	.features__text {
-		padding-right: 50px;
-		padding-left: 50px;
-		font-size: 16px;
+	.main-text {
+		padding-right: 20px;
+		padding-left: 20px;
 	}
 	.boards__body::after {
 		height: 200px;
-	}
-	.contents__text {
-		font-size: 16px;
-		padding-right: 50px;
-		padding-left: 50px;
 	}
 	.block {
 		width: 300px;
@@ -356,6 +367,28 @@
 	}
 	.footer__column {
 		margin-right: 55px;
+	}
+	.gallery__row {
+		display: grid;
+		gap: 33px;
+		/* grid-template-columns: repeat(4, 1fr); */
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		padding: 0 5px;
+		margin-bottom: 45px;
+	}
+	.gallery__row-2 {
+		display: grid;
+		gap: 33px;
+		grid-template-columns: minmax(220px, 1fr) minmax(150px, 225px) minmax(220px, 1fr);
+	}
+	.gallery__image:nth-child(5) {
+		display: none;
+	}
+	.gallery__image:nth-child(6) {
+		display: none;
+	}
+	.gallery__image:nth-child(7) {
+		display: none;
 	}
 }
 
