@@ -258,6 +258,19 @@
 		margin-top: 100px;
 		margin-bottom: 100px;
 	}
+	.testimonials {
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+	.column__content {
+		padding-right: 0px;
+	}
+	.testimonials__body {
+		margin: 0px 20px;
+	}
+	.testimonials__body {
+		flex-direction: column;
+	}
 }
 
 /* xs <= Small (--md4) */
@@ -315,6 +328,12 @@
 	}
 	.contents__body {
 		gap: 30px;
+	}
+	.testimonials__body {
+		margin: 0px 10px;
+	}
+	.column__item {
+		padding: 20px;
 	}
 }
 @media (max-width: 400px) {

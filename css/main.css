@@ -633,3 +633,50 @@ body._lock {
 		right: 0;
 	}
 }
+
+/* ===== Sectin#6 ===== */
+
+.testimonials {
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+.testimonials__header {
+	margin-bottom: 60px;
+}
+.testimonials__title {
+}
+.testimonials__body {
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	margin: 0px 70px;
+}
+.column {
+	display: flex;
+	flex: 0 1 50%;
+	flex-direction: column;
+	gap: 20px;
+}
+.column__item {
+	background: #181818;
+	border: 1px solid #dedede;
+	border-radius: 10px;
+	padding: 40px;
+}
+.column__header {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 30px;
+}
+.column__avatar {
+}
+.column__info {
+	font-weight: 500;
+}
+.column__name {
+}
+.column__job {
+}
+.column__content {
+	padding-right: 30px;
+}
