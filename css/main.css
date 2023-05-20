@@ -557,3 +557,79 @@ body._lock {
 	opacity: 0.4;
 	cursor: default;
 }
+
+/* ===== Sectin#6 ===== */
+
+.partners {
+}
+.partners__container {
+}
+.partners__header {
+	margin-bottom: 45px;
+}
+.partners__title {
+	margin-bottom: 20px;
+}
+.partners__text {
+}
+.partners__body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 70px;
+	z-index: 5;
+}
+.partners__wrapper {
+	width: 850px;
+	overflow: hidden;
+	position: relative;
+}
+.partners__wrapper::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 70px;
+}
+.partners__item1,
+.partners__item2 {
+	display: block;
+	position: absolute;
+	width: 850px;
+	z-index: 1;
+}
+.partners__item1 a img,
+.partners__item2 a img {
+	transition: all 0.3s ease 0s;
+}
+.partners__item1 a:not(:last-child),
+.partners__item2 a:not(:last-child) {
+	margin: 0px 57px 0px 0px;
+	z-index: 1;
+}
+.partners__item1 {
+	animation: partnersMove1 10s infinite;
+	animation-timing-function: linear;
+	z-index: 1;
+}
+.partners__item2 {
+	animation: partnersMove2 10s infinite;
+	animation-timing-function: linear;
+	z-index: 1;
+}
+
+@keyframes partnersMove1 {
+	from {
+		right: 0;
+	}
+	to {
+		right: 850px;
+	}
+}
+@keyframes partnersMove2 {
+	from {
+		right: -850px;
+	}
+	to {
+		right: 0;
+	}
+}

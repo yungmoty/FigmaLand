@@ -426,4 +426,8 @@
 		border: 1px solid #fff;
 		box-shadow: none;
 	}
+	.partners__item1 a img:hover,
+	.partners__item2 a img:hover {
+		transform: scale(0.94);
+	}
 }
