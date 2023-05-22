@@ -258,6 +258,23 @@ function bodyUnlock() {
 
 //\\Modal window//\\
 
+//\\Hide and View Pass\\//
+function showPassword() {
+	const showPasswordBtn = document.querySelector('.form-content__hideNview-pass');
+	const passwordInput = document.getElementById('formPassword');
+
+
+	showPasswordBtn.addEventListener('click', (event) => {
+		showPasswordBtn.classList.toggle('_hide');
+		if (passwordInput.getAttribute('type') === 'password') passwordInput.setAttribute('type', 'text');
+		else passwordInput.setAttribute('type', 'password');
+	});
+
+}
+showPassword()
+//\\Hide and View Pass//\\
+
+
 // Load More Products
 async function getProducts(button) {
 	if (!button.classList.contains('_hold')) {

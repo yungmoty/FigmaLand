@@ -691,6 +691,30 @@ body._lock {
 	visibility: hidden;
 	transition: all 0.8s ease 0s;
 }
+.form-content__hideNview-pass {
+	position: absolute;
+	cursor: pointer;
+	right: 10px;
+	top: 30px;
+	width: 30px;
+	height: 30px;
+}
+.form-content__hideNview-pass::after {
+	position: absolute;
+	content: "";
+	top: 13px;
+	right: 0px;
+	width: 30px;
+	height: 3px;
+	background: gray;
+	border-radius: 4px;
+	transform: rotate(45deg) scale(1);
+	transition: transform 0.5s ease 0s;
+}
+.form-content__hideNview-pass._hide::after {
+	transition: transform 0.5s ease 0s;
+	transform: rotate(45deg) scale(0);
+}
 #registration-form._open {
 	opacity: 1;
 	visibility: visible;
@@ -775,6 +799,7 @@ body._lock {
 .form-content__item {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 .form-content__item:not(:last-child) {
 	margin-bottom: 25px;
