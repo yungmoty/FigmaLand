@@ -32,8 +32,8 @@ const menuBody = document.querySelector('.menu__body');
 if (iconMenu) {
 	iconMenu.addEventListener('click', function (e) {
 		document.body.classList.toggle('_lock');
-		iconMenu.classList.toggle('_active');
-		menuBody.classList.toggle('_active');
+		iconMenu.classList.toggle('_open');
+		menuBody.classList.toggle('_open');
 	});
 }
 //\\burger//\\
@@ -50,9 +50,9 @@ if (isMobile.any()) {
 			let menuFooterList = target.querySelector('.footer__list');
 
 			if (target.querySelector('.footer__title')) {
-				menuFooter.parentElement.classList.toggle('_active');
+				menuFooter.parentElement.classList.toggle('_open');
 
-				if (menuFooter.parentElement.classList.contains('_active')) {
+				if (menuFooter.parentElement.classList.contains('_open')) {
 					menuFooterList.style.maxHeight = menuFooterList.scrollHeight + 'px';
 				} else {
 					menuFooterList.style.maxHeight = null;
@@ -79,15 +79,29 @@ const modalWindow = document.getElementById('registration-form');
 const formRegister = document.querySelector('.registration-form__wrapper');
 
 
+modalWindow.addEventListener('submit', formSend);
+
+async function formSend(e) {
+	e.preventDefault()
+
+	let error = formValidate(modalWindow)
+
+	let formData = new FormData(modalWindow)
+
+	if (error === 0) {
+
+		let response = await fetch('sendmail.php', {
+			method: 'POST',
+			body: formData
+		})
+	} else {
+		alert('Fill in required fields')
+	}
+}
 
 btnRegister.addEventListener('click', (event) => {
 	event.preventDefault();
-	document.body.classList.add('_lock');
-	formRegister.classList.add('_active');
-
-	modalWindow.style.display = `flex`;
-	modalWindow.style.visibility = `visible`;
-	
+	popupOpen(modalWindow)	
 });
 
 
@@ -108,9 +122,7 @@ formRegister.addEventListener('click', (event) => {
 		removeStyleInput();
 	}
 	if (targetElement.classList.contains('registration-form__close')) {
-		document.body.classList.remove('_lock');
-		formRegister.classList.remove('_active');
-		closeModal();
+		popupClose(targetElement.closest('#registration-form'))
 	}
 });
 
@@ -136,10 +148,114 @@ function removeStyleInput() {
  })
 }
 
-function closeModal() {
-	modalWindow.style.display = `none`;
-	modalWindow.style.visibility = `hidden`;
+function formValidate(form) {
+	let error = 0
+	let formReq = document.querySelectorAll('._required');
+
+	for (let index = 0; index < formReq.length; index++) {
+		const input = formReq[index];
+
+		formRemoveError(input)
+
+		if (input.classList.contains('_email')) {
+			if (emailTest(input)) {
+				formAddError(input);
+				error++;
+			}
+		} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
+			formAddError(input);
+			error++;
+		} else {
+			if (input.value === '') {
+				formAddError(input);
+				error++;
+			}
+		}
+	}
+	return error
 }
+
+function emailTest(input) {
+	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value)
+}
+
+function formAddError(input) {
+	input.parentElement.classList.add('_error')
+	input.classList.add('_error')
+}
+function formRemoveError(input) {
+	input.parentElement.classList.remove('_error')
+	input.classList.remove('_error')
+}
+
+// Animation 
+const TIMEOUT = 800;
+let unlock = true;
+const headerPadding = document.querySelectorAll('.header');
+
+function popupOpen(currentModalWindow) {
+	if (currentModalWindow && unlock) {
+		const popupActive = document.querySelector('#registration-form._open');
+		if (popupActive) {
+			popupClose(popupActive, false);
+		} else {
+			bodyLock();
+		}
+		currentModalWindow.classList.add('_open');
+
+		currentModalWindow.addEventListener('click', function (e) {
+			if (!e.target.closest('.registration-form__wrapper')) {
+				popupClose(e.target.closest('#registration-form'));
+			}
+		});
+	}
+}
+
+function popupClose(popupActive, doUnlock = true) {
+	if (unlock) {
+		popupActive.classList.remove('_open');
+		if (doUnlock) {
+			bodyUnlock();
+		}
+	}
+}
+// При открытие окна не дергается экран
+function bodyLock() {
+	const headerPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth +'px';
+
+	if (headerPadding.length > 0) { 
+		for (let i = 0; i < headerPadding.length; i++) {
+			const elem = headerPadding[i];
+			elem.style.paddingRight = headerPaddingValue;
+		}
+	}
+	document.body.style.paddingRight = headerPaddingValue;
+	document.body.classList.add('_lock');
+
+	unlock = false;
+	setTimeout(() => {
+		unlock = true;
+	}, TIMEOUT);
+}
+
+function bodyUnlock() {	
+	setTimeout(function () {
+		if (headerPadding.length > 0) {
+			for (let i = 0; i < headerPadding.length; i++) {
+				const el = headerPadding[i];
+				el.style.paddingRight = '0px';
+			}
+		}
+		document.body.style.paddingRight = '0px';
+		document.body.classList.remove('_lock');
+	}, TIMEOUT);
+	
+	unlock = false;
+	setTimeout(() => {
+		unlock = true;
+	}, TIMEOUT);
+}
+
 //\\Modal window//\\
 
 // Load More Products
