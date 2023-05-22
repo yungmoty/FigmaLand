@@ -41,7 +41,7 @@
 						</nav>
 					</div>
 					<div class="header__button">
-						<a href="" class="button-header btn btn_black">Login</a>
+						<a href="#registration-form" class="button-header btn btn_black">Login</a>
 					</div>
 				</div>
 			</div>
@@ -333,6 +333,43 @@
 				</div>
 			</section>
 		</main>
+		<form action="#" method="post" class="registration-form" id="registration-form">
+			<!-- <div class="rap"> -->
+			<div class="registration-form__wrapper _logIn">
+				<div class="registration-form__heder">
+					<div class="registration-form__log-in">Log In</div>
+					<div class="registration-form__sign-up">Sign Up</div>
+				</div>
+				<div class="registration-form__body form-content">
+					<div class="form-content__item">
+						<label for="formEmail" class="form-content__label">Email Address</label>
+						<input type="text" id="formEmail" name="email" class="form-content__input _required _email"
+							placeholder="Enter your email address...">
+					</div>
+					<div class="form-content__item">
+						<div class="form-content__password">
+							<label for="formPassword" class="form-content__label">Password</label>
+							<div class="form-content__forgot">Forgot password?</div>
+						</div>
+						<input type="password" id="formPassword" name="password" class="form-content__input _required"
+							placeholder="Enter your password...">
+					</div>
+				</div>
+				<div class="registration-form__agree">
+					<input id="formAgreement" type="checkbox" name="agreement" class="registration-form__input">
+					<label for="formAgreement" class="registration-form__label">
+						<span>I give my consent to the processing of personal data in accordance with the <a
+								href="">Conditions</a></span>
+					</label>
+				</div>
+				<div class="registration-form__pass">
+					<button type="submit" name="logIn" class="registration-form__pass-log-in">Log In</button>
+					<button type="submit" name="signUp" class="registration-form__pass-sign-up">Create an account</button>
+				</div>
+				<span class="registration-form__close">&#10006;</span>
+			</div>
+			<!-- </div> -->
+		</form>
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__body">

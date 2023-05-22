@@ -73,6 +73,75 @@ buttonMore.addEventListener('click', (e) => {
 });
 //\\More Products//\\
 
+//\\Modal window\\//
+const btnRegister = document.querySelector('.button-header');
+const modalWindow = document.getElementById('registration-form');
+const formRegister = document.querySelector('.registration-form__wrapper');
+
+
+
+btnRegister.addEventListener('click', (event) => {
+	event.preventDefault();
+	document.body.classList.add('_lock');
+	formRegister.classList.add('_active');
+
+	modalWindow.style.display = `flex`;
+	modalWindow.style.visibility = `visible`;
+	
+});
+
+
+formRegister.addEventListener('click', (event) => {
+	let targetElement = event.target
+	
+	if (targetElement.classList.contains('registration-form__sign-up')) {
+		formRegister.classList.add('_signUp');
+		formRegister.classList.remove('_logIn');
+		document.querySelector('.registration-form__input').classList.add('_required');
+	}
+	if (targetElement.classList.contains('registration-form__log-in')) {
+		formRegister.classList.add('_logIn');
+		formRegister.classList.remove('_signUp');
+		document.querySelector('.registration-form__input').classList.remove('_required');
+	}
+	if (!targetElement.closest('.form-content__item')) {
+		removeStyleInput();
+	}
+	if (targetElement.classList.contains('registration-form__close')) {
+		document.body.classList.remove('_lock');
+		formRegister.classList.remove('_active');
+		closeModal();
+	}
+});
+
+const registerInput = document.querySelectorAll('.form-content__input');
+
+registerInput.forEach(input => {
+	input.addEventListener('click', (e) => {
+		const target = e.currentTarget;
+		if (target.closest('.form-content__item')) {
+			removeStyleInput();
+			target.style.border = `2px solid var(--color1)`;
+			target.style.boxShadow = `0 0 5px gray`;
+		}
+	});
+})
+
+function removeStyleInput() {
+ const inputs = document.querySelectorAll('.form-content__input');
+
+ inputs.forEach(input => {
+	input.style.border = `2px solid gray`;
+	input.style.boxShadow = `none`;
+ })
+}
+
+function closeModal() {
+	modalWindow.style.display = `none`;
+	modalWindow.style.visibility = `hidden`;
+}
+//\\Modal window//\\
+
 // Load More Products
 async function getProducts(button) {
 	if (!button.classList.contains('_hold')) {

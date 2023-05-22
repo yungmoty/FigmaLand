@@ -345,6 +345,9 @@
 		padding: 8px 20px;
 		height: 40px;
 	}
+	.header__logo img {
+		width: 162px;
+	}
 }
 
 /* === MOBILE FIRST === */
@@ -448,5 +451,18 @@
 	.partners__item1 a img:hover,
 	.partners__item2 a img:hover {
 		transform: scale(0.94);
+	}
+	.registration-form__pass-log-in:hover,
+	.registration-form__pass-sign-up:hover {
+		background: #2e3ffb;
+	}
+	.form-content__input:hover {
+		transform: scale(1.005);
+	}
+	.form-content__forgot:hover {
+		color: rgb(150, 149, 149);
+	}
+	.registration-form__close:hover {
+		color: #fff;
 	}
 }
