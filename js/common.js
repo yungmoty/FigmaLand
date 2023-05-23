@@ -77,7 +77,24 @@ buttonMore.addEventListener('click', (e) => {
 const btnRegister = document.querySelector('.button-header');
 const modalWindow = document.getElementById('registration-form');
 const formRegister = document.querySelector('.registration-form__wrapper');
+const formError = document.querySelector('.registration-form__error');
+const registerInput = document.querySelectorAll('.form-content__input');
+const formPassBtn = document.querySelector('.registration-form__pass');
 
+function dontActive(e) {
+	formPassBtn.classList.add('_dontActive');
+}
+
+registerInput.forEach(item => {
+	item.addEventListener('input', () => {
+		item.classList.remove('_error')
+		if (registerInput[0].value !== '' && registerInput[1].value !== '') formPassBtn.classList.remove('_dontActive');
+		
+		if (!registerInput[0].classList.contains('_error') && !registerInput[1].classList.contains('_error')) {
+			formError.classList.remove('_error');
+		}
+	})
+})
 
 modalWindow.addEventListener('submit', formSend);
 
@@ -95,12 +112,15 @@ async function formSend(e) {
 			body: formData
 		})
 	} else {
-		alert('Fill in required fields')
+		// alert('Fill in required fields')
+		formError.classList.add('_error');
+		registerInput.forEach(item => item.classList.add('_error'))
 	}
 }
 
 btnRegister.addEventListener('click', (event) => {
 	event.preventDefault();
+	dontActive();
 	popupOpen(modalWindow)	
 });
 
@@ -123,10 +143,14 @@ formRegister.addEventListener('click', (event) => {
 	}
 	if (targetElement.classList.contains('registration-form__close')) {
 		popupClose(targetElement.closest('#registration-form'))
+		formError.classList.remove('_error');
+		registerInput.forEach(item => {
+			item.value = '';
+			item.classList.remove('_error')
+		})
 	}
 });
 
-const registerInput = document.querySelectorAll('.form-content__input');
 
 registerInput.forEach(input => {
 	input.addEventListener('click', (e) => {
@@ -214,6 +238,11 @@ function popupOpen(currentModalWindow) {
 function popupClose(popupActive, doUnlock = true) {
 	if (unlock) {
 		popupActive.classList.remove('_open');
+		formError.classList.remove('_error');
+		registerInput.forEach(item => {
+			item.value = '';
+			item.classList.remove('_error')
+		})
 		if (doUnlock) {
 			bodyUnlock();
 		}

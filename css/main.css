@@ -823,6 +823,7 @@ body._lock {
 }
 .form-content__input {
 	height: 50px;
+	color: #000;
 	background-color: rgb(255, 255, 255);
 	border: 2px solid gray;
 	border-radius: 6px;
@@ -831,10 +832,6 @@ body._lock {
 }
 .form-content__input::placeholder {
 	font-size: 14px;
-}
-._required {
-}
-._email {
 }
 .registration-form__agree {
 	margin-bottom: 25px;
@@ -889,6 +886,7 @@ body._lock {
 	display: flex;
 	flex-direction: row;
 	text-align: center;
+	background: var(--color1);
 }
 .registration-form__pass-log-in,
 .registration-form__pass-sign-up {
@@ -901,7 +899,7 @@ body._lock {
 	font-weight: 500;
 	height: 50px;
 	border-radius: 6px;
-	background: var(--color1);
+	/* background: var(--color1); */
 	transition: background 0.3s ease 0s;
 }
 ._signUp .registration-form__pass-log-in {
@@ -918,4 +916,22 @@ body._lock {
 	top: 20px;
 	right: 20px;
 	transition: color 0.3s ease 0s;
+}
+.registration-form__error {
+	display: none;
+}
+.registration-form__error._error {
+	display: block;
+	color: red;
+	font-size: 14px;
+	margin-top: -5px;
+	margin-bottom: 10px;
+}
+.form-content__input._error {
+	background: rgba(255, 0, 0, 0.17);
+	color: #fff;
+}
+.registration-form__pass._dontActive {
+	background: #4454fe5a;
+	pointer-events: none;
 }

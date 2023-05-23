@@ -456,9 +456,6 @@
 	.registration-form__pass-sign-up:hover {
 		background: #2e3ffb;
 	}
-	.form-content__input:hover {
-		transform: scale(1.005);
-	}
 	.form-content__forgot:hover {
 		color: rgb(150, 149, 149);
 	}
