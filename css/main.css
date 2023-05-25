@@ -108,6 +108,18 @@ body._lock {
 
 /* USER STYLES */
 
+/* ===== will-change ===== */
+.content,
+.work,
+.features,
+.row,
+.block,
+.gallery,
+.partners,
+.testimonials,
+.column {
+	will-change: transform;
+}
 /* ===== Header ===== */
 .header {
 	position: absolute;
@@ -200,7 +212,6 @@ body._lock {
 }
 
 /* ===== Footer ===== */
-
 .footer__column {
 	position: relative;
 }

@@ -26,6 +26,113 @@ const isMobile = {
 	}
 }
 
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+if (!isMobile.any()) {
+	ScrollSmoother.create({
+		wrapper: '.wrapper',
+		content: '.content',
+		smooth: 1.2,
+		effects: true,
+	})
+
+	gsap.fromTo('.work', { opacity: 1 } , {
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.work',
+			start: 'center',
+			end: '400',
+			scrub: true,
+		}
+	})
+
+	gsap.fromTo('.features', { y: 100, opacity: 0 }, {
+		opacity: 1, y: 0,
+		scrollTrigger: {
+			trigger: '.features',
+			start: '-600',
+			end: '-100',
+			scrub: true,
+		}
+	})
+
+	let featuresRows = document.querySelectorAll('.row');
+	featuresRows.forEach(row => {
+		gsap.fromTo(row, { x: 50, opacity: 0 }, {
+			opacity: 1, x: 0,
+			scrollTrigger: {
+				trigger: row,
+				start: '-850',
+				end: '-100',
+				scrub: true,
+			}
+		})
+	})
+
+	gsap.fromTo('.block_left', { x: -70, y: 50, opacity: 0 }, {
+		opacity: 1, x: 0, y: 0,
+		scrollTrigger: {
+			trigger: '.block_left',
+			start: '-600',
+			end: '-40',
+			scrub: true,
+		}
+	})
+
+	gsap.fromTo('.block_right', { x: 70, y: 50, opacity: 0 }, {
+		opacity: 1, x: 0, y: 0,
+		scrollTrigger: {
+			trigger: '.block_right',
+			start: '-600',
+			end: '-40',
+			scrub: true,
+		}
+	})
+
+	gsap.fromTo('.gallery', { y: 100, opacity: 0 }, {
+		opacity: 1, y: 0,
+		scrollTrigger: {
+			trigger: '.gallery',
+			start: '-600',
+			end: '-100',
+			scrub: true,
+		}
+	})
+
+	gsap.fromTo('.partners', { y: 100, opacity: 0 }, {
+		opacity: 1, y: 0,
+		scrollTrigger: {
+			trigger: '.partners',
+			start: '-600',
+			end: '-100',
+			scrub: true,
+		}
+	})
+
+	gsap.fromTo('.testimonials', { y: 100, opacity: 0 }, {
+		opacity: 1, y: 0,
+		scrollTrigger: {
+			trigger: '.testimonials',
+			start: '-600',
+			end: '-100',
+			scrub: true,
+		}
+	})
+
+	let testimonialsColumns = document.querySelectorAll('.column');
+	testimonialsColumns.forEach(column => {
+		gsap.fromTo(column, { y: 100, opacity: 0 }, {
+			opacity: 1, y: 0,
+			scrollTrigger: {
+				trigger: column,
+				start: '-750',
+				end: '-100',
+				scrub: true,
+			}
+		})
+	})
+}
+
 //\\burger\\//
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
