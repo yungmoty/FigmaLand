@@ -160,7 +160,7 @@
 	.footer__column {
 		margin-bottom: 10px;
 	}
-	.footer__column._active .footer__list {
+	.footer__column._open .footer__list {
 		opacity: 1;
 	}
 	.footer__title::after {
@@ -176,7 +176,7 @@
 		transition: transform 0.3s ease 0s;
 		-webkit-transform: rotate(45deg);
 	}
-	._accordion._active .footer__title::after {
+	._accordion._open .footer__title::after {
 		transform: rotate(-135deg);
 		-webkit-transform: rotate(-135deg);
 	}
